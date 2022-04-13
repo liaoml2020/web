@@ -19,9 +19,9 @@
       width="60%"
       append-to-body
     >
-        <div ref="file"></div>
+      <div ref="file"></div>
     </el-dialog>
-      
+        
   </div>
 </template>
 

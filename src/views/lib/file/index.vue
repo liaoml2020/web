@@ -243,7 +243,6 @@ export default {
       },
       // 分类名称
       className: undefined,
-     
       // 表单参数
       form: {},
       // 表单校验
@@ -258,7 +257,7 @@ export default {
          Authorization:  'Bearer ' + getToken() ,
        },
        fileUrl:undefined,
-       showExt:undefined
+       showExt:undefined,
     }
 
   },
@@ -432,14 +431,16 @@ export default {
         },
         /**文件预览 */
       preview(row) {
-        debugger
         if(row.fileExt == 'pdf' ){
           this.showExt  = "pdf"
           this.fileUrl = row.filePath
-        }
-        if(row.fileExt == 'docx' || row.fileExt == 'doc' ){
+        }else if(row.fileExt == 'docx' || row.fileExt == 'doc' ){
           this.showExt  = "docx"
            this.fileUrl = row.filePath
+        }else if(row.fileExt == 'png' || row.fileExt == 'jpg'){
+          window.open(row.filePath)
+        }else{
+          this.$message.error("暂不支持这个格式的预览");
         }
       },
       //关闭pdf预览
