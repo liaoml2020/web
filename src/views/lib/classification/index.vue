@@ -60,7 +60,7 @@
       <el-table-column label="分类编号" prop="id" />
       <el-table-column label="分类名称" prop="className" :show-overflow-tooltip="true" />
       <el-table-column label="分类简介" prop="brief" :show-overflow-tooltip="true" width="220px"/>
-      <el-table-column label="父类节点" prop="parentPath" :show-overflow-tooltip="true" v-show="false" />
+      <el-table-column label="父类节点" prop="parentPath"  :show-overflow-tooltip="true" v-show="false" />
       <el-table-column label="创建时间" align="center" prop="createTime" >
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.createTime) }}</span>

@@ -2,30 +2,6 @@
   <div class="app-container">
     <el-row :gutter="20">
       <!--分类数据-->
-      <el-col :span="4" :xs="24">
-        <div class="head-container">
-          <el-input
-            v-model="className"
-            placeholder="请输入分类名称"
-            clearable
-            size="small"
-            prefix-icon="el-icon-search"
-            style="margin-bottom: 20px"
-          />
-        </div>
-        <div class="head-container">
-          <el-tree
-            :data="classificationOptions"
-            :props="defaultProps"
-            :expand-on-click-node="false"
-            :filter-node-method="filterNode"
-            ref="tree"
-            default-expand-all
-            @node-click="handleNodeClick"
-          />
-        </div>
-      </el-col>
-      <el-col :span="20" :xs="24">
         <el-form
           :model="queryParams"
           ref="queryForm"
@@ -185,7 +161,6 @@
           :limit.sync="queryParams.pageSize"
           @pagination="getList"
         />
-      </el-col>
     </el-row>
     <!-- 上传文件对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
@@ -255,12 +230,6 @@
         <el-button @click="cancel">取 消</el-button>
       </div>
     </el-dialog>
-    <!--预览插件-->
-    <preview
-      v-bind:showExt="showExt"
-      :fileUrl="fileUrl"
-      @closepdf="closepdf"
-    ></preview>
   </div>
 </template>
 
@@ -276,7 +245,6 @@ import {
 import { optionselect } from "@/api/lib/keyword";
 import { getTreeselect } from "@/api/lib/classification";
 import { getToken } from "@/utils/auth";
-import Preview from "./preview.vue";
 // let loading;
 export default {
   name: "File",
