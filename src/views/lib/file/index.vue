@@ -276,7 +276,7 @@ import {
 import { optionselect } from "@/api/lib/keyword";
 import { getTreeselect } from "@/api/lib/classification";
 import { getToken } from "@/utils/auth";
-import Preview from "./preview.vue";
+import Preview from "@/components/filePreview/preview.vue";
 // let loading;
 export default {
   name: "File",

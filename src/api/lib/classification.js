@@ -52,4 +52,12 @@ export function getTreeselect() {
   })
 }
 
+// 关键词选择框列表
+export function optionselect() {
+  return request({
+    url: '/library/classification/optionselect',
+    method: 'get'
+  })
+}
+
 
